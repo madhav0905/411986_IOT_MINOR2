@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/style.css">
+</head>
+  <body>
+        <section class="hero is-centered is-fullheight">
+      <div class="hero-body ">
+        <div class="container">
+          <div class="container is-max-width">
+            <div class="columns is-centered">
+              <div class="column is-5-tablet is-4-desktop is-4-widescreen " >
+    
+ <div class="columns is-mobile is-centered is-vcentered">
+                    <div class="column">
+    <form action="/admin/createcity" method="post" class="box">
+      <h1 class="title has-text-centered">Create City</h1>
+       <div class="field m-2">  
+       <label for="fname" class="label">City name:</label>
+ <p> <input type="text" class="input is-small" id="fname" name="fname" /></p></div>
+<br>
+<div class="is-centered has-text-centered">
+  <div class="field m-2">   
+  <input type="submit" value="Submit"  class="button is-success is-centered has-text-centered"/>
+  </div>
+     </div>
+      <% msg.forEach(m => { %>
+      <h2 class="has-text-danger"><%= m %></h2>
+      <%})%>
+        <a href="/admin/city">Create Parking in City</a>
+    </form>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </section>
+  </body>
+</html>
+  <style>
+    body {
+      background-image: url("/park.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.9;
+      margin: 0%;
+    }
+    </style>

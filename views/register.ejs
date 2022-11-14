@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Register Page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+        <script>
+    //VALIDATE
+    
+  </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+  </head>
+  <body>
+
+    <section class="hero is-centered m-0">
+      <div class="hero-body m-0">
+        <div class="container">
+          <div class="container m-0">
+            <div class="columns is-centered m-0">
+              <div
+                class="column is-4-tablet is-4-desktop is-4-widescreen m-0"
+                id="a"
+              > 
+              <form action="/auth/store" method="post" class="box"   id="myform" onSubmit="return validate()"  >
+                  <div class="columns is-mobile is-centered is-vcentered">
+                    <div class="column m-0">
+                      <img src="/LOGO.png" alt="" />
+                    </div>
+                    <div class="column m-0" id="m-header">
+                    
+                      <span class="title is-italic">Parking Ltd</span><br />
+                      <span class="subtitle is-italic"
+                        >Book Parking Anywhere Online</span
+                      >
+                  
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label class="label">Email:<span id="star">*</span></label>
+                    <p class="control has-icons-left has-icons-right">
+                      <input
+                        class="input"
+                        type="email"
+                        placeholder="Email"
+                        name="user_name"
+                        required
+                      />
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-envelope"></i>
+                      </span>
+                      <small></small>
+                    </p>
+                    
+                  </div>
+                  <div class="field mb-0">
+                    <label class="label">Password:<span id="star">*</span></label>
+                    <p class="control has-icons-left">
+                      <input
+                        class="input"
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        required
+                      />
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-lock"></i>
+                      </span>
+                      <small></small>
+                    </p>
+                    
+        
+                  </div>
+
+                  <div class="field mb-0">
+                    <label class="label">Name:<span id="star">*</span></label>
+                    <p class="control has-icons-left">
+                      <input
+                        class="input"
+                        type="text"
+                        placeholder="Name"
+                        name="name"
+                        required
+                      />
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-user"></i>
+                      </span>
+          <small></small>
+                    </p>
+                    
+                  
+                  </div>
+                  <div class="field mb-0">
+                    <label class="label">Address<span id="star">*</span></label>
+                    <p class="control has-icons-left">
+                      <input
+                        class="input"
+                        type="text"
+                        placeholder="Address"
+                        name="address"
+                        required
+                      />
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-info-circle"></i>
+                      </span>
+                      <small></small>
+                    </p>
+                    
+   
+                  </div>
+                  <div class="field mb-0">
+                    <label class="label">Age<span id="star">*</span></label>
+                    <p class="control has-icons-left">
+                      <input
+                        class="input"
+                        type="number"
+                        min="10"
+                        placeholder="Age"
+                        name="age"
+                        min=10
+                        required
+                      />
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-info-circle"></i>
+                      </span>
+                      <small></small>
+                    </p>
+                    
+                   
+                  </div>
+                  
+                  <div class="field mb-0">
+                    
+                    <label class="label">Blood Group<span id="star">*</span></label>
+                         <div class="control has-icons-left"></p>
+                    <div class="select">
+                      <select class="is-hovered" name="bloodgroup">
+                        <option value="A+" >A Positive</option>
+                        <option value="A-">A Negative</option>
+
+                        <option value="B+">B Positive</option>
+                        <option value="B-">B Negative</option>
+
+                        <option value="AB+">AB Positive</option>
+                        <option value="AB-">AB Negative</option>
+
+                        <option value="O+">O Positive</option>
+                        <option value="O-">O Negative</option>
+                      </select>
+                  
+                  </div>
+                    <span class="icon is-small is-left">
+                        <i class="fa fa-medkit"></i>
+                      </span>
+                    </div>
+                  </div>
+                     
+                  <% msg.forEach(m => { %>
+                  <h2 class="has-text-danger"><%= m %></h2>
+                  <%})%>
+                  <div class="field has-text-centered mb-0">
+            
+                    <input type="submit" class="button is-success" value="Submit">
+                  </div>
+               
+                  <div class="has-text-centered">
+                    <p class="is-italic">Have account already !</p>
+                    <p class="is-italic"><a href="/auth/login">Login</a></p>
+                  </div>
+                   </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+<script src="/js/reg_val.js">
+  
+</script>
+  <style>
+    #a {
+      height:100 vh;
+    }
+small
+{
+  font-size: small;
+}
+   
+    body {
+      background-image: url("/park.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.9;
+      margin: 0%;
+    }
+  
+   
+    img {
+      width: 8rem;
+      height: 7rem;
+
+      margin-left: 5%;
+    }
+        #star {
+      color: red;
+    }
+    small{
+      color: red;
+    }
+ 
+@keyframes slideInLeft {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    form {
+      animation: 1s ease-out 0s 1 slideInLeft;
+animation-timing-function: ease-in-out;
+      -webkit-animation-timing-function: ease-in-out;
+      padding: 40px;
+    }
+
+  </style>
+
+</html>

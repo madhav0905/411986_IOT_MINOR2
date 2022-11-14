@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login Page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <section class="hero is-centered is-fullheight">
+      <div class="hero-body">
+        <div class="container">
+          <div class="container is-max-width">
+            <div class="columns is-centered">
+              <div class="column is-5-tablet is-4-desktop is-4-widescreen">
+                <form
+                  action="/auth/loggedin"
+                  method="post"
+                  class="box"
+                  id="myform"
+                  onSubmit="return validate()"
+                >
+                  <div class="columns is-mobile is-centered is-vcentered">
+                    <div class="column">
+                      <img src="/LOGO.png" alt="" />
+                    </div>
+                    <div class="column">
+                      <span class="title is-italic">Parking Ltd</span><br />
+                      <span class="subtitle is-italic"
+                        >Book Parking Anywhere Online</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="field m-2">
+                    <label class="label">Email:<span id="star">*</span></label>
+                    <p class="control has-icons-left has-icons-right">
+                      <input
+                        class="input"
+                        autocomplete="off"
+                        type="email"
+                        placeholder="Email"
+                        name="user_name"
+                        value="<%=dat.user_name%>"
+                        required
+                      />
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-envelope"></i>
+                      </span>
+                      <small></small>
+                    </p>
+                  </div>
+                  <div class="field mb-2">
+                    <label class="label"
+                      >Password:<span id="star">*</span></label
+                    >
+                    <p class="control has-icons-left">
+                      <input
+                        class="input"
+                        autocomplete="off"
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                        value="<%=dat.password%>"
+                        required
+                      />
+                      <span class="icon is-small is-left">
+                        <i class="fa fa-lock"></i>
+                      </span>
+                      <small></small>
+                    </p>
+                  </div>
+                  <% msg.forEach(m => { %>
+                  <h2 class="has-text-danger"><%= m %></h2>
+                  <%})%>
+                  <div class="field has-text-centered mb-2">
+                    <button class="button is-success">Login</button>
+                  </div>
+
+                  <div class="has-text-centered">
+                    <p class="is-italic">Dont have account?</p>
+                    <p class="is-italic">
+                      <a href="/auth/register">Register</a>
+                    </p>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="/js/login_validate.js"></script>
+  <style>
+    body {
+      background-image: url("/park.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.9;
+      margin: 0%;
+    }
+    img {
+      width: 9rem;
+      height: 7rem;
+      margin-left: 5%;
+    }
+    #star {
+      color: red;
+    }
+    small {
+      color: red;
+      font-size: small;
+    }
+    @keyframes slideInLeft {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    form {
+      animation: 1s ease-out 0s 1 slideInLeft;
+      animation-timing-function: ease-in-out;
+      -webkit-animation-timing-function: ease-in-out;
+      padding: 40px;
+    }
+  </style>
+</html>
